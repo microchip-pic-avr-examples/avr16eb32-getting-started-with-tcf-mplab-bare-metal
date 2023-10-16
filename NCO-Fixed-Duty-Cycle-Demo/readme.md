@@ -19,19 +19,19 @@ More details and code examples on the AVR16EB32 can be found at the following li
 
 ## Setup
 The AVR16EB32 Cnano Development Board is used as test platform.
-<br><img src="../images/AVR16EB32_Cnano_Board.svg">
+<br><img src="../images/AVR16EB32_Cnano_Board.png">
 
 
 ## Operation
  1. Connect the board to the PC.
 
- 2. Open the **TCF_NCO_Fixed_Duty_Cycle_MCC.X* or **TCF_NCO_Fixed_Duty_Cycle.X** solution in MPLAB X IDE.
+ 2. Open the  **TCF_NCO_Fixed_Duty_Cycle.X** solution in MPLAB X IDE.
 
  3. Right click on the project and select **Set as main project**.
 
 <br><img src="../images/setAsMain.png">
 
- 4. Build the **TCF_NCO_Fixed_Duty_Cycle_MCC.X** or **TCF_NCO_Fixed_Duty_Cycle.X**  project: click on **Clean and Build Project**.
+ 4. Build the  **TCF_NCO_Fixed_Duty_Cycle.X**  project: click on **Clean and Build Project**.
 
 <br><img src="../images/cleanAndBuild.png">
 
