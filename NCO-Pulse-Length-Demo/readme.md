@@ -2,7 +2,8 @@
 
 ## Use case 2: Generate Two Two Constant On-Time PWM Signals in NCO-Pulse Length Mode using the TCF
 
-Below is an example of how to set TCF to generate Two Constant On-Time PWM Signals 
+Below is an example of how to set TCF to generate Two Constant On-Time PWM Signals.
+The On-Time is always constant even if the frequency is changed.
 
 ## Related Documentation
 More details and code examples on the AVR16EB32 can be found at the following links:
@@ -17,10 +18,8 @@ More details and code examples on the AVR16EB32 can be found at the following li
 ## Hardware Used
 - AVR16EB32 Cnano [(AVR16EB32)](insert url link here)(insert url link here)
 
-## Setup
-The AVR16EB32 Cnano Development Board is used as test platform.
-<br><img src="../images/AVR16EB32_Cnano_Board.png">
 
+## Functionality
 <br>After we initialize the peripheral clock and the TCF, we call in an infinite loop the NCO_Pulse_Length_Demo function.
 
 The purpose of this function is to change the pulse length of the waveform which  the timer outputs on the pin. We first start the timer  with a pulse length of 2 clock-cycles and then run up to the maximum of 128 clock-cycles. 
@@ -53,6 +52,9 @@ void NCO_Pulse_Length_Demo(void)
 ```
 <br><img src="../images/ncoPlFlowchart.png">
 
+## Setup
+The AVR16EB32 Cnano Development Board is used as test platform.
+<br><img src="../images/AVR16EB32_Cnano_Board.png">
 
 ## Operation
  1. Connect the board to the PC.

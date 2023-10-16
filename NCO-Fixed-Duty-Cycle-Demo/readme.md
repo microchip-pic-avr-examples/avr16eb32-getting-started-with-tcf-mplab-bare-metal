@@ -2,7 +2,7 @@
 
 ## Use case 1: Generate Two Variable-Frequency Signals in NCO-Fixed Mode using the TCF
 
-Below is an example of how to set TCF to generate Two Variable-Frequency signals
+Below is an example of how to set TCF to generate Two Variable-Frequency signals, ranging from 10 Hz to 100 Khz, with one magnitude step change. The TCF ins operating in NCO mode, which has an important advantage over clasiical PWM control, as it offers liniar ferquency regulation.
 
 ## Related Documentation
 More details and code examples on the AVR16EB32 can be found at the following links:
@@ -17,11 +17,9 @@ More details and code examples on the AVR16EB32 can be found at the following li
 ## Hardware Used
 - AVR16EB32 Cnano [(AVR16EB32)](insert url link here)
 
-## Setup
-The AVR16EB32 Cnano Development Board is used as test platform.
-<br><img src="../images/AVR16EB32_Cnano_Board.png">
 
 
+## Functionality
 <br>After we initialize the peripheral clock and the TCF, we call in an infinite loop the NCO_Fixed_DutyCycle_Demo function.
 
 The purpose of this function is to change the frequency at which the timer operates. We first start the timer with a frequency of 100 Hz and run up until we reach 100 KHz.
@@ -48,6 +46,9 @@ void NCO_Fixed_DutyCycle_Demo(void)
 ```
 <br><img src="../images/ncoFixedDutyCycleFlowchart.png">
 
+## Setup
+The AVR16EB32 Cnano Development Board is used as test platform.
+<br><img src="../images/AVR16EB32_Cnano_Board.png">
 
 ## Operation
 
