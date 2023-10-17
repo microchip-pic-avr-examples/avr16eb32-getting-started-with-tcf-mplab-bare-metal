@@ -23,8 +23,8 @@
             "semverRange": "^2.7.184"
         },
         "configurator": {
-            "name": "Bare-Metal",
-            "semverRange": ""
+            "name": "N/A",
+            "semverRange": " "
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -40,7 +40,7 @@
         "peripherals": ["Timer"],
         "keywords": [
             "Getting Started",
-            "Bare-Metal",
+            "Bare Metal",
             "Timer"
     ],
         "additionalData": {
