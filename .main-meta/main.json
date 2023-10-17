@@ -41,7 +41,8 @@
         "keywords": [
             "Getting Started",
             "Bare Metal",
-            "Timer"
+            "Timer",
+            "NCO"
     ],
         "additionalData": {
             "longDescription": {
