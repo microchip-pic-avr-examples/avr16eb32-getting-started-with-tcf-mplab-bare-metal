@@ -1,9 +1,8 @@
 [![MCHP](../images/microchip.png)](https://www.microchip.com)
 
-## Use case 2: Generate Two Two Constant On-Time PWM Signals in NCO-Pulse Length Mode using the TCF
+## Use case 2: Generate Two Two Constant On-Time PWM Signals in NCO-Pulse Length Mode Using the TCF
 
-Below is an example of how to set TCF to generate Two Constant On-Time PWM Signals.
-The On-Time is always constant even if the frequency is changed.
+The example below shows how to set the TCF to generate Two Constant-On-Time PWM signals.
 
 ## Related Documentation
 More details and code examples on the AVR16EB32 can be found at the following links:
@@ -12,19 +11,19 @@ More details and code examples on the AVR16EB32 can be found at the following li
 - [AVR16EB32 Code Examples on GitHub](insert url link here)
 
 ## Software Used
-- [MPLAB X IDE v6.15 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
+- [MPLAB® X IDE v6.15 or newer.](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
 - [AVR-Ex DFP-2.5.184 or newer Device Pack](insert url link here)
 
 ## Hardware Used
-- AVR16EB32 Cnano [(AVR16EB32)](insert url link here)(insert url link here)
+- AVR16EB32 Curiosity Nano [(AVR16EB32)](insert url link here)(insert url link here)
 
 
 ## Functionality
-<br>After we initialize the peripheral clock and the TCF, we call in an infinite loop the NCO_Pulse_Length_Demo function.
+<br>After the peripheral clock and TCF are initialized, an infinite loop is called, using the NCO_Pulse_Length_Demo function.
 
-The purpose of this function is to change the pulse length of the waveform which  the timer outputs on the pin. We first start the timer  with a pulse length of 2 clock-cycles and then run up to the maximum of 128 clock-cycles. 
+This function changes the pulse length of the waveform that the timer outputs on the pin. The timer starts running with a pulse length of 2 clock cycles, and continues to run until it reaches 128 clock cycles.
 
-At the end we stop the timer and reset the pulse length to default.
+After the process ends, the user must stop the timer and reset the pulse length to default.
 
 ```
 void NCO_Pulse_Length_Demo(void)
@@ -53,7 +52,7 @@ void NCO_Pulse_Length_Demo(void)
 <br><img src="../images/ncoPlFlowchart.png">
 
 ## Setup
-The AVR16EB32 Cnano Development Board is used as test platform.
+The AVR16EB32 Curiosity Nano Development Board is used as a test platform.
 <br><img src="../images/AVR16EB32_Cnano_Board.png">
 
 ## Operation
@@ -76,7 +75,7 @@ The AVR16EB32 Cnano Development Board is used as test platform.
 
 ## Results
 
-Below is illustrated a logic analyzer capture, to help understanding a little bit better how the TCF generates a waveform signal in NCO Pulse-Length mode.
+The logic analyzer capture below shows hot the TCF generates a waveform signal in NCO Pulse-Length mode.
 
 <br>Result: TCF is used to generate two output signals with a frequnecy of 125 kHz and pulse-wdth-modulated with a variable duration ranging from 1 clock-cycle up to 128 clock-cycles.
 In this case one clock-cycle takes 50 ns.
@@ -85,4 +84,4 @@ In this case one clock-cycle takes 50 ns.
 
 ## Summary
 
-This example depicted how to create a project in bare-metal using the TCF peripheral of ARVR16EB32. The TCF was configured to generate two PWM output signals on the default TCF output pins. The pulse length varies between 1 clock-cycle and 128 clock-cylces.The measured output confirms the expected result.
+This example shows how to create a project in bare-metal using the TCF peripheral of ARVR16EB32. The TCF was configured to generate two PWM output signals on the default TCF output pins. The pulse length varies between 1 clock cycle and 128 clock cylces.The measured output confirms the expected result.
