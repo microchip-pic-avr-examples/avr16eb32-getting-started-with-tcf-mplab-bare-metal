@@ -1,6 +1,6 @@
 [![MCHP](../images/microchip.png)](https://www.microchip.com)
 
-##  Generate Two Two Constant On-Time PWM Signals in NCO-Pulse Length Mode Using the TCF
+##  Generate Two Constant On-Time PWM Signals in NCO-Pulse Length Mode Using the TCF
 
 The example shows how to set the TCF to generate Two Constant-On-Time PWM signals.
 
@@ -13,6 +13,7 @@ More details and code examples on the AVR16EB32 can be found at the following li
 ## Software Used
 - [MPLAB® X IDE v6.15 or newer.](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
 - [AVR-Ex DFP-2.5.184 or newer Device Pack](insert url link here)
+- [XC8 compiler v2.45]
 
 ## Hardware Used
 - AVR16EB32 Curiosity Nano [(AVR16EB32)](insert url link here)(insert url link here)
@@ -22,11 +23,11 @@ The AVR16EB32 Curiosity Nano Development Board is used as a test platform.
 <br><img src="../images/AVR16EB32_Cnano_Board.png">
 
 ## Functionality
-<br>After the peripheral clock and TCF are initialized, an infinite loop is called, using the ```NCO_Pulse_Length_Demo``` function.
+<br>After the peripheral clock and TCF are initialized, the  ```NCO_Pulse_Length_Demo``` function is called in an infinite loop.
 
 This function changes the pulse length of the waveform that the timer outputs on the pin. The timer starts running with a pulse length of 2 clock cycles, and continues to run until it reaches 128 clock cycles.
 
-I clock cycle takes 50 ns beacuse the timer is running at 20 MHz. 1 divided by 20 Mhz equals 50 ns.
+1 clock cycle takes 50 ns beacuse the timer is running at 20 MHz. 1 divided by 20 Mhz equals 50 ns.
 
 After the process ends, the user must stop the timer and reset the pulse length to 1 clock cycle.
 
@@ -113,10 +114,10 @@ void NCO_Pulse_Length_Demo(void)
 
 ## Results
 
-The logic analyzer captures below shows how the TCF generates a waveform signal in NCO Pulse-Length mode.
+The logic analyzer capture below shows how the TCF generates a waveform signal in NCO Pulse-Length mode.
 
-<br>Result: TCF is used to generate two pulse-width-modulated output signals with a frequency of 125 kHz and with variable duration ranging from 1 clock cycle up to 128 clock-cycles.
-In this case one clock-cycle takes 50 ns.
+<br>Result: TCF is used to generate two pulse-width-modulated output signals with a frequency of 125 kHz and with variable duration ranging from 1 clock cycle up to 128 clock cycles.
+
 <br><img src="../images/ncoPlResult.png">
 
 

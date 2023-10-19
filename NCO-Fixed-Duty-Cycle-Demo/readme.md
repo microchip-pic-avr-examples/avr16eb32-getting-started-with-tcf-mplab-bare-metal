@@ -13,6 +13,7 @@ More details and code examples on the AVR16EB32 can be found at the following li
 ## Software Used
 - [MPLAB® X IDE v6.15 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
 - [AVR-Ex_DFP-2.5.184 or newer Device Pack](insert url link here)
+- [XC8 compiler v2.45]
 
 ## Hardware Used
 - AVR16EB32 Curiosity Nano [(AVR16EB32)](insert url link here)
@@ -22,10 +23,10 @@ The AVR16EB32 Curiosity Nano Development Board is used as a test platform.
 <br><img src="../images/AVR16EB32_Cnano_Board.png">
 
 ## Functionality
-<br>After the peripheral clock and TCF are initialized, an infinite loop is called, using the ```NCO_Fixed_DutyCycle_Demo``` function.
+<br>After the peripheral clock and TCF are initialized, the ```NCO_Fixed_DutyCycle_Demo``` function is called in an infinite loop. 
 
-The timer is started with a frequency of 100 Hz and run up until it reaches 100 KHz.
-At the end the timer is stopped and frequency is reset to 10 Hz.
+The timer is started with a frequency of 10 Hz and run up until it reaches 100 KHz.
+At the end the timer is stopped and frequency is reseted to 10 Hz.
 
 ```
 void NCO_Fixed_DutyCycle_Demo(void)
@@ -95,19 +96,19 @@ void NCO_Fixed_DutyCycle_Demo(void)
 The logic analyzer captures below shows how the TCF generates a waveform signal in NCO Fixed Duty Cycle (FDC) mode.
 
 
-<br>Result 1: two idential signals are generated with a frequency of 10 Hz and duty cycle of 50%.
+<br>Result 1: two identical signals are generated with a frequency of 10 Hz and duty cycle of 50%.
 <br><img src="../images/10Hz.png">
 
-<br>Result 2: two idential signals are generated with a frequency of 100 Hz and duty cycle of 50%.
+<br>Result 2: two identical signals are generated with a frequency of 100 Hz and duty cycle of 50%.
 <br><img src="../images/100Hz.png">
 
-<br>Result 3: two idential signals are generated with a frequency of 1 kHz and duty cycle of 50%.
+<br>Result 3: two identical signals are generated with a frequency of 1 kHz and duty cycle of 50%.
 <br><img src="../images/1KHz.png">
 
-<br>Result 4: two idential signals are generated with a frequency of 10 kHz and duty cycle of 50%.
+<br>Result 4: two identical signals are generated with a frequency of 10 kHz and duty cycle of 50%.
 <br><img src="../images/10KHz.png">
 
-<br>Result 5: two idential signals are generated with a frequency of 100 kHz and duty cycle of 50%.
+<br>Result 5: two identical signals are generated with a frequency of 100 kHz and duty cycle of 50%.
 <br><img src="../images/100KHz.png">
 
 

@@ -17,7 +17,7 @@ More details and code examples on the AVR16EB32 can be found at the following li
 ## Software Used
 - [MPLAB X IDE v6.15 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
 - [AVR-Ex DFP-2.5.184 or newer Device Pack](insert url link here)
-
+- [XC8 compiler v2.45]
 
 ## Hardware Used
 - AVR16EB32 Curiosity Nano [(AVR16EB32)](insert url link here)
