@@ -1,8 +1,8 @@
 [![MCHP](../images/microchip.png)](https://www.microchip.com)
 
-## Use case 2: Generate Two Two Constant On-Time PWM Signals in NCO-Pulse Length Mode Using the TCF
+##  Generate Two Two Constant On-Time PWM Signals in NCO-Pulse Length Mode Using the TCF
 
-The example below shows how to set the TCF to generate Two Constant-On-Time PWM signals.
+The example shows how to set the TCF to generate Two Constant-On-Time PWM signals.
 
 ## Related Documentation
 More details and code examples on the AVR16EB32 can be found at the following links:
@@ -17,43 +17,81 @@ More details and code examples on the AVR16EB32 can be found at the following li
 ## Hardware Used
 - AVR16EB32 Curiosity Nano [(AVR16EB32)](insert url link here)(insert url link here)
 
+## Setup
+The AVR16EB32 Curiosity Nano Development Board is used as a test platform.
+<br><img src="../images/AVR16EB32_Cnano_Board.png">
 
 ## Functionality
-<br>After the peripheral clock and TCF are initialized, an infinite loop is called, using the NCO_Pulse_Length_Demo function.
+<br>After the peripheral clock and TCF are initialized, an infinite loop is called, using the ```NCO_Pulse_Length_Demo``` function.
 
 This function changes the pulse length of the waveform that the timer outputs on the pin. The timer starts running with a pulse length of 2 clock cycles, and continues to run until it reaches 128 clock cycles.
 
-After the process ends, the user must stop the timer and reset the pulse length to default.
+I clock cycle takes 50 ns beacuse the timer is running at 20 MHz. 1 divided by 20 Mhz equals 50 ns.
+
+After the process ends, the user must stop the timer and reset the pulse length to 1 clock cycle.
 
 ```
 void NCO_Pulse_Length_Demo(void)
 {
-   TCF0_Start(); 
+  /* Enable the TCF */
+    TCF0_Start(); 
+    
+    /* Delay for 20 us */
    _delay_us(20);
+   
+   /* Configure the pulse-length to 2 clock cycles */
    TCF0_NCO_PulseLengthSet(TCF_WGPULSE_CLK2_gc);
+   
+   /* Delay for 20 us */
    _delay_us(20);
+   
+   /* Configure the pulse-length to 4 clock cycles */
    TCF0_NCO_PulseLengthSet(TCF_WGPULSE_CLK4_gc);
+   
+   /* Delay for 20 us */
    _delay_us(20);
+   
+   /* Configure the pulse-length to 8 clock cycles */
    TCF0_NCO_PulseLengthSet(TCF_WGPULSE_CLK8_gc);
+   
+   /* Delay for 20 us */
    _delay_us(20);
+   
+   /* Configure the pulse-length to 6 clock cycles */
    TCF0_NCO_PulseLengthSet(TCF_WGPULSE_CLK16_gc);
+   
+   /* Delay for 20 us */
    _delay_us(20);
+   
+   /* Configure the pulse-length to 32 clock cycles */
    TCF0_NCO_PulseLengthSet(TCF_WGPULSE_CLK32_gc);
+   
+   /* Delay for 20 us */
    _delay_us(20);
+   
+   /* Configure the pulse-length to 64 clock cycles */
    TCF0_NCO_PulseLengthSet(TCF_WGPULSE_CLK64_gc);
+   
+   /* Delay for 20 us */
    _delay_us(20);
+   
+   /* Configure the pulse-length to 128 clock cycles */
    TCF0_NCO_PulseLengthSet(TCF_WGPULSE_CLK128_gc);
+   
+   /* Delay for 20 us */
    _delay_us(18);
+   
+   /* Stop the timer */
    TCF0_Stop();
+   
+   /* Configure the pulse-length to 1 clock cycle */
    TCF0_NCO_PulseLengthSet(TCF_WGPULSE_CLK1_gc);
 }
 
 ```
 <br><img src="../images/ncoPlFlowchart.png">
 
-## Setup
-The AVR16EB32 Curiosity Nano Development Board is used as a test platform.
-<br><img src="../images/AVR16EB32_Cnano_Board.png">
+
 
 ## Operation
  1. Connect the board to the PC.
@@ -75,13 +113,13 @@ The AVR16EB32 Curiosity Nano Development Board is used as a test platform.
 
 ## Results
 
-The logic analyzer capture below shows hot the TCF generates a waveform signal in NCO Pulse-Length mode.
+The logic analyzer captures below shows how the TCF generates a waveform signal in NCO Pulse-Length mode.
 
-<br>Result: TCF is used to generate two output signals with a frequnecy of 125 kHz and pulse-wdth-modulated with a variable duration ranging from 1 clock-cycle up to 128 clock-cycles.
+<br>Result: TCF is used to generate two pulse-width-modulated output signals with a frequency of 125 kHz and with variable duration ranging from 1 clock cycle up to 128 clock-cycles.
 In this case one clock-cycle takes 50 ns.
 <br><img src="../images/ncoPlResult.png">
 
 
 ## Summary
 
-This example shows how to create a project in bare-metal using the TCF peripheral of ARVR16EB32. The TCF was configured to generate two PWM output signals on the default TCF output pins. The pulse length varies between 1 clock cycle and 128 clock cylces.The measured output confirms the expected result.
+This example shows how to create a bare metal project using the TCF peripheral of ARVR16EB32. The TCF was configured to generate two PWM output signals on the default TCF output pins(PA0 and PA1). The pulse length varies between 1 clock cycle and 128 clock cylces. The measured output confirms the expected result.
