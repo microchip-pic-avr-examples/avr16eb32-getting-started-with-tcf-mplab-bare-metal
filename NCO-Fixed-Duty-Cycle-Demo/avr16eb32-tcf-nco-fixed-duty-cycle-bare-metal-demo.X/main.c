@@ -72,11 +72,11 @@ void TCF0_Initialize(void)
    /* Configure the TCF in Numerically Controlled Oscillator Fixed Duty Cycle mode */
    TCF0_ModeSet(TCF_WGMODE_NCOFDC_gc); 
    
-   /* Configure the TCF to start counting from 0 */
-   TCF0_CounterSet(0);
-   
-   /* Load CMP register with the frequency */
+    /* Load CMP register with the frequency */
    TCF0_CompareSet(TCF0_NCOFD_HZ_TO_INCREMENT(10, 20000000, 1));
+   
+   /* Configure the TCF to start counting from 0 */
+   TCF0_CounterSet(0);  
 }
 
 void NCO_Fixed_DutyCycle_Demo(void)
