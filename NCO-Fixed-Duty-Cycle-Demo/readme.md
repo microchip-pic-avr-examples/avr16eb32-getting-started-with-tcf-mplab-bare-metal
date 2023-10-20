@@ -1,7 +1,7 @@
 [![MCHP](../images/microchip.png)](https://www.microchip.com)
 
 ##  Generate Two Variable-Frequency Signals in NCO-Fixed Mode Using  the TCF
-The example shows how to set the TCF to generate Two Variable-Frequency signals, ranging from 10 Hz to 100 khz, with one magnitude step change. The TCF is operating in Numerically Controlled Oscillator (NCO) mode, and has an important advantage over classical Pulse-Width Modulation (PWM) control, as it offers liniar ferquency regulation.
+The example shows how to set the TCF to generate two Variable-Frequency signals, ranging from 10 Hz to 100 khz, with one magnitude step change. The TCF is operating in Numerically Controlled Oscillator (NCO) mode, and has an important advantage over classical Pulse-Width-Modulation (PWM) control, as it offers liniar ferquency regulation.
 
 
 ## Related Documentation
@@ -26,7 +26,7 @@ The AVR16EB32 Curiosity Nano Development Board is used as a test platform.
 <br>After the peripheral clock and TCF are initialized, the ```NCO_Fixed_DutyCycle_Demo``` function is called in an infinite loop. 
 
 The timer is started with a frequency of 10 Hz and run up until it reaches 100 KHz.
-At the end the timer is stopped and frequency is reseted to 10 Hz.
+At the end the timer is stopped and frequency is reset to 10 Hz.
 
 ```
 void NCO_Fixed_DutyCycle_Demo(void)
@@ -76,7 +76,7 @@ void NCO_Fixed_DutyCycle_Demo(void)
 
  1. Connect the board to the PC.
 
- 2. Open the  **TCF_NCO_Fixed_Duty_Cycle.X** solution in MPLAB<sup>®</sup> X IDE.
+ 2. Open the  **TCF_NCO_Fixed_Duty_Cycle.X** solution in MPLAB X IDE.
 
  3. Right click the project and select **Set as main project**.
 

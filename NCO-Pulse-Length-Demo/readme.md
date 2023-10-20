@@ -2,7 +2,7 @@
 
 ## Generate Two Constant On-Time PWM Signals in NCO-Pulse Length Mode Using the TCF
 
-The example shows how to set the TCF to generate Two Constant-On-Time PWM signals.
+The example shows how to set the TCF to generate two Constant-On-Time PWM signals.
 
 ## Related Documentation
 More details and code examples on the AVR16EB32 can be found at the following links:
@@ -27,9 +27,9 @@ The AVR16EB32 Curiosity Nano Development Board is used as a test platform.
 
 This function changes the pulse length of the waveform that the timer outputs on the pin. The timer starts running with a pulse length of 2 clock cycles, and continues to run until it reaches 128 clock cycles.
 
-1 clock cycle takes 50 ns beacuse the timer is running at 20 MHz. 1 divided by 20 Mhz equals 50 ns.
+1 clock cycle takes 50 ns beacuse the timer is running at 20 MHz. 1 divided by 20 MHz equals 50 ns.
 
-After the process ends, the user must stop the timer and reset the pulse length to 1 clock cycle.
+At the end the timer is stopped and the pulse length is reset to 1 clock cycle.
 
 ```
 void NCO_Pulse_Length_Demo(void)
@@ -114,13 +114,13 @@ void NCO_Pulse_Length_Demo(void)
 
 ## Results
 
-The logic analyzer capture below shows how the TCF generates a waveform signal in NCO Pulse-Length mode.
+The logic analyzer capture below show how the TCF generates a waveform signal in NCO Pulse-Length mode.
 
-<br>Result: TCF is used to generate two pulse-width-modulated output signals with a frequency of 125 kHz and with variable duration ranging from 1 clock cycle up to 128 clock cycles.
+<br>Result: TCF is used to generate two PWM output signals with a frequency of 125 kHz and with variable duration ranging from 1 clock cycle up to 128 clock cycles.
 
 <br><img src="../images/ncoPlResult.png">
 
 
 ## Summary
 
-This example shows how to create a bare metal project using the TCF peripheral of ARVR16EB32. The TCF was configured to generate two PWM output signals on the default TCF output pins(PA0 and PA1). The pulse length varies between 1 clock cycle and 128 clock cylces. The measured output confirms the expected result.
+This example shows how to create a bare metal project using the TCF peripheral of ARVR16EB32. The TCF was configured to generate two PWM output signals on the default TCF output pins (PA0 and PA1). The pulse length varies between 1 clock cycle and 128 clock cylces. The measured output confirms the expected result.
