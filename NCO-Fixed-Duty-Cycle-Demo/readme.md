@@ -30,6 +30,9 @@ At the end the timer is stopped and frequency is reset to 10 Hz.
 ```
 void NCO_Fixed_DutyCycle_Demo(void)
 {   
+    /* Configure the TCF to start counting from 0 */
+    TCF0_CounterSet(0); 
+    
     /* Enable the TCF */
     TCF0_Start();
     

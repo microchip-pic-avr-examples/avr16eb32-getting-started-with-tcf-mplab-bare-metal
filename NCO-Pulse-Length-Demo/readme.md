@@ -33,7 +33,10 @@ At the end the timer is stopped and the pulse length is reset to 1 clock cycle.
 ```
 void NCO_Pulse_Length_Demo(void)
 {
-  /* Enable the TCF */
+    /* Configure the TCF to start counting from 0 */
+    TCF0_CounterSet(0); 
+    
+    /* Enable the TCF */
     TCF0_Start(); 
     
     /* Delay for 20 us */
