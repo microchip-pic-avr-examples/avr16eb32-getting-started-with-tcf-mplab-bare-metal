@@ -91,7 +91,6 @@ void TCF0_Initialize(void)
 
 void NCO_Pulse_Length_Demo(void)
 {
-{
   /* Enable the TCF */
     TCF0_Start(); 
     
@@ -146,8 +145,6 @@ void NCO_Pulse_Length_Demo(void)
    /* Configure the pulse-length to 1 clock cycle */
    TCF0_NCO_PulseLengthSet(TCF_WGPULSE_CLK1_gc);
 }
-}
-
 
 void main(void) 
 {  
