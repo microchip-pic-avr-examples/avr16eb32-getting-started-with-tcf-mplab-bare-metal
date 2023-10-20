@@ -38,7 +38,7 @@ void TCF0_ModeSet(TCF_WGMODE_t mode)
 void TCF0_CounterSet(uint32_t value)
 {
     while((TCF0.STATUS & TCF_CNTBUSY_bm) != 0){};   
-    TCF0.CNT0 = (uint8_t)value;  
+    TCF0.CNT = (uint8_t)value;  
 }
 
 void TCF0_CompareSet(uint32_t value)
@@ -83,16 +83,16 @@ void TCF0_Initialize(void)
    TCF0_CompareSet(TCF0_NCOPL_HZ_TO_INCREMENT(125000, 20000000)); 
    
    /* Configure the pulse length to be 1 clock cycle */
-   TCF0_NCO_PulseLengthSet(TCF_WGPULSE_CLK1_gc);
-   
-   /* Configure the TCF to start counting from 0 */
-   TCF0_CounterSet(0);
+   TCF0_NCO_PulseLengthSet(TCF_WGPULSE_CLK1_gc);   
 }
 
 void NCO_Pulse_Length_Demo(void)
 {
-  /* Enable the TCF */
-    TCF0_Start(); 
+    /* Configure the TCF to start counting from 0 */
+    TCF0_CounterSet(0);
+    
+    /* Enable the TCF */
+   TCF0_Start(); 
     
     /* Delay for 20 us */
    _delay_us(20);
@@ -136,7 +136,7 @@ void NCO_Pulse_Length_Demo(void)
    /* Configure the pulse-length to 128 clock cycles */
    TCF0_NCO_PulseLengthSet(TCF_WGPULSE_CLK128_gc);
    
-   /* Delay for 20 us */
+   /* Delay for 18 us */
    _delay_us(18);
    
    /* Stop the timer */

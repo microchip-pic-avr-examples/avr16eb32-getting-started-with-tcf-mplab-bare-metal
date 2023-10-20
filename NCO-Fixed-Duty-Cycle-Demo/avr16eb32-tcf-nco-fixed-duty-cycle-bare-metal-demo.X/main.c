@@ -37,7 +37,7 @@ void TCF0_ModeSet(TCF_WGMODE_t mode)
 void TCF0_CounterSet(uint32_t value)
 {
     while((TCF0.STATUS & TCF_CNTBUSY_bm) != 0){};   
-    TCF0.CNT0 = (uint8_t)value;  
+    TCF0.CNT = (uint8_t)value;  
 }
 
 void TCF0_CompareSet(uint32_t value)
@@ -73,14 +73,14 @@ void TCF0_Initialize(void)
    TCF0_ModeSet(TCF_WGMODE_NCOFDC_gc); 
    
     /* Load CMP register with the frequency */
-   TCF0_CompareSet(TCF0_NCOFD_HZ_TO_INCREMENT(10, 20000000, 1));
-   
-   /* Configure the TCF to start counting from 0 */
-   TCF0_CounterSet(0);  
+   TCF0_CompareSet(TCF0_NCOFD_HZ_TO_INCREMENT(10, 20000000, 1));   
 }
 
 void NCO_Fixed_DutyCycle_Demo(void)
 {   
+    /* Configure the TCF to start counting from 0 */
+    TCF0_CounterSet(0); 
+    
     /* Enable the TCF */
     TCF0_Start();
     
