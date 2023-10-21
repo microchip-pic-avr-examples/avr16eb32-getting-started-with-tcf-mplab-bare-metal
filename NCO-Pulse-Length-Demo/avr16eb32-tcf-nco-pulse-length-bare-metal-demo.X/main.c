@@ -11,7 +11,7 @@
 void CLOCK_Initialize(void)
 {
     /* Disable the clock prescaler */
-    _PROTECTED_WRITE(CLKCTRL.MCLKCTRLB, 0x0);
+    _PROTECTED_WRITE(CLKCTRL.MCLKCTRLB, 0x10);
 }
 
 void TCF0_OutputsSet(uint8_t value)     
@@ -136,8 +136,8 @@ void NCO_Pulse_Length_Demo(void)
    /* Configure the pulse-length to 128 clock cycles */
    TCF0_NCO_PulseLengthSet(TCF_WGPULSE_CLK128_gc);
    
-   /* Delay for 18 us */
-   _delay_us(18);
+   /* Delay for 25 us */
+   _delay_us(25);
    
    /* Stop the timer */
    TCF0_Stop();
@@ -150,6 +150,8 @@ void main(void)
 {  
     CLOCK_Initialize();
     TCF0_Initialize();
+    
+    PORTA.DIRSET = PIN4_bm;
     while(1)
     {
         NCO_Pulse_Length_Demo();
