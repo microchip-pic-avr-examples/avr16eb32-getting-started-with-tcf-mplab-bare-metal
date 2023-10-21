@@ -11,7 +11,7 @@
 void CLOCK_Initialize(void)
 {
     /* Disable the clock prescaler */
-    _PROTECTED_WRITE(CLKCTRL.MCLKCTRLB, 0x10);
+    _PROTECTED_WRITE(CLKCTRL.MCLKCTRLB, 0x0);
 }
 
 void TCF0_OutputsSet(uint8_t value)     
