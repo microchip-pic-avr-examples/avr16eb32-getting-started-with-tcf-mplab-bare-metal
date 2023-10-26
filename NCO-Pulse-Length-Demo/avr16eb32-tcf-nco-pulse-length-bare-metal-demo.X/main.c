@@ -30,6 +30,7 @@ void TCF0_PrescalerSet(TCF_PRESC_t config)
     while((TCF0.STATUS & TCF_CTRLABUSY_bm) != 0){};
     TCF0.CTRLA  |= config;
 }
+
 void TCF0_ModeSet(TCF_WGMODE_t mode)
 {    
     TCF0.CTRLB |= mode;
@@ -54,17 +55,18 @@ void TCF0_Start(void)
 }
 
 void TCF0_Stop(void)
-{
-    while((TCF0.STATUS & TCF_CTRLABUSY_bm) != 0){};
-    TCF0.CTRLA &= ~TCF_ENABLE_bm;   
+{   
+    while((TCF0.STATUS & TCF_CTRLABUSY_bm) != 0){}
+    TCF0.CTRLA &= ~TCF_ENABLE_bm; 
 }
 
 void TCF0_NCO_PulseLengthSet(TCF_WGPULSE_t config)
 {
-    uint8_t temp; 
-    while((TCF0.STATUS & TCF_CTRLCBUSY_bm) != 0){};       
+    uint8_t temp;   
+
+    while((TCF0.STATUS & TCF_CTRLCBUSY_bm) != 0){}
     temp = (TCF0.CTRLC & ~TCF_WGPULSE_gm) |
-               (  config   &  TCF_WGPULSE_gm); 
+           (  config   &  TCF_WGPULSE_gm); 
     TCF0.CTRLC = temp;
 }
 
@@ -150,8 +152,6 @@ void main(void)
 {  
     CLOCK_Initialize();
     TCF0_Initialize();
-    
-    PORTA.DIRSET = PIN4_bm;
     while(1)
     {
         NCO_Pulse_Length_Demo();
