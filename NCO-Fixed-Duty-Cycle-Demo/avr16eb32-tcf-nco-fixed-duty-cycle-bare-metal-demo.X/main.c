@@ -21,7 +21,7 @@ void TCF0_OutputsSet(uint8_t value)
 
 void TCF0_ClockSet(TCF_CLKSEL_t config)
 {
-    TCF0.CTRLB |= TCF_CLKSEL_CLKPER_gc;    
+    TCF0.CTRLB |= config;    
 }
 
 void TCF0_PrescalerSet(TCF_PRESC_t config)
